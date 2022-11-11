@@ -7,6 +7,12 @@
 .Title {
   text-align: center;
   background-color: bisque;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+h2 {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 table,
@@ -15,11 +21,16 @@ td {
   border: 1px solid;
   width: 50%;
   font-size: 17px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
 }
 caption {
   font-weight: bold;
   font-size: 20px;
   margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 ul[title]::before {
@@ -30,11 +41,14 @@ ul[title]::before {
   text-decoration: underline;
   list-style-type: none;
   font-size: 20px;
-  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 ul {
   list-style-type: none;
   font-size: 17px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 img {
@@ -51,18 +65,23 @@ footer {
 footer a {
   color: #2f2f2f;
   font-weight: bolder;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 button {
   font-size: 1.25rem;
   cursor: pointer;
-  margin: 5px;
   background-color: #2f2f2f;
   border-color: #2f2f2f;
   color: #fff;
   width: 15%;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .price {
   font-weight: bolder;
   font-size: 20px;
   margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
