@@ -9,10 +9,13 @@
   background-color: bisque;
   margin-left: 10px;
   margin-right: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 h2 {
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 table,
@@ -41,8 +44,8 @@ ul[title]::before {
   text-decoration: underline;
   list-style-type: none;
   font-size: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
 }
 ul {
   list-style-type: none;
@@ -84,4 +87,5 @@ button {
   margin: 5px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
 }
