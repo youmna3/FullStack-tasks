@@ -33,6 +33,7 @@
   text-decoration: underline;
   font-weight: bold;
   display: flex;
+  justify-content: space-between;
 }
 
 .menu .list {
@@ -40,6 +41,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  justify-content: space-between;
 }
 
 .menu .list > li {
@@ -80,8 +82,10 @@
   text-align: center;
 }
 header {
-  background-color: #222121;
+  background-color: white;
   border: solid #222121 1px;
+  border-left: none;
+  border-right: none;
   margin-right: 5px;
   margin-left: 5px;
   display: flex;
@@ -100,6 +104,12 @@ header .logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
+header .logo a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 .Search {
   display: flex;
@@ -107,7 +117,7 @@ header .logo {
 }
 .Search input {
   background-color: white;
-  border: solid white 1px;
+  border: solid #6a2929 1px;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
@@ -119,9 +129,9 @@ header .logo {
 }
 
 .Search button {
-  color: #6a2929;
-  background-color: white;
-  border: solid white 1px;
+  color: #2f2f2f;
+  background-color: #6a2929;
+  border: solid #6a2929 1px;
   padding: 5px;
   font-weight: bold;
   font-size: 1rem;
@@ -131,26 +141,57 @@ header .logo {
   text-align: center;
 }
 .main-menu {
+  display: flex;
+  justify-content: center;
   background-color: #6a2929;
   margin-right: 5px;
   margin-left: 5px;
+}
+.main-menu .menu-icon {
   display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.main-menu .main-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.main-menu .main-links > li > a {
+  font-weight: bold;
+  color: white;
+  border: solid #6a2929 1px;
+  border-top: none;
+  border-right: none;
+  padding: 10px;
+}
+.main-menu .cart {
+}
+.main-menu .favorite {
 }
 
 footer {
-  margin: 5px;
+  width: 99%;
+  position: absolute;
+  bottom: 0;
+  margin-left: 5px;
+  margin-right: 10px;
   background-color: #2f2f2f;
   padding: 10px;
 }
 footer a {
   color: rgb(209, 204, 204);
   font-weight: bolder;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 footer p {
   color: rgb(248, 236, 236);
-  margin-left: 5%;
   margin-right: 5%;
   margin-top: 5px;
 }
