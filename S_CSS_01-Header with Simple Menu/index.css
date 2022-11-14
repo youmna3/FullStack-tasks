@@ -142,24 +142,30 @@ header .logo a {
 }
 .main-menu {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #6a2929;
   margin-right: 5px;
   margin-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .main-menu .menu-icon {
-  display: flex;
-  justify-content: flex-start;
-  cursor: pointer;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
 }
-.main-menu .main-links {
+.main-menu .icons {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 5px;
+}
+.main-menu > .main-links {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -173,8 +179,7 @@ header .logo a {
   padding: 10px;
 }
 .main-menu .cart {
-}
-.main-menu .favorite {
+  color: white;
 }
 
 footer {
