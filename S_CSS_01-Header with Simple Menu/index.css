@@ -4,9 +4,7 @@
   font-family: sans-serif;
   text-transform: capitalize;
 }
-body {
-  position: relative;
-}
+
 .menu {
   background-color: #2f2f2f;
   margin-right: 5px;
@@ -16,11 +14,11 @@ body {
   justify-content: space-between;
 }
 .menu .links {
+  position: relative;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
 }
 .menu .links a {
   color: azure;
@@ -45,6 +43,7 @@ body {
 }
 
 .menu .list > li {
+  position: relative;
   color: azure;
   font-weight: bold;
   padding: 10px;
@@ -179,9 +178,7 @@ header .logo a {
 .main-menu .cart {
   color: white;
 }
-/* body {
-  position: relative;
-} */
+
 footer {
   position: fixed;
   left: 0;
