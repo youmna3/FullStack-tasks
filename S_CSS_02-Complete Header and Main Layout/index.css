@@ -1,0 +1,91 @@
+* {
+  /* box-sizing: border-box; */
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+.page {
+  display: grid;
+  height: 100vh;
+  background-color: #eee;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 50px 70px 50px auto 50px;
+  grid-template-areas:
+    "nav nav nav nav nav nav nav nav nav nav "
+    " head head head head head head head head head head"
+    "menu menu menu menu menu menu menu menu menu menu"
+    "side side cont cont cont cont cont cont cont cont"
+    "foot foot foot foot foot foot foot foot foot foot";
+}
+nav {
+  grid-area: nav;
+}
+/* nav div .text {
+  grid-area: txt;
+}
+nav ul .inline-list {
+  grid-area: list;
+} */
+header {
+  grid-area: head;
+}
+section {
+  grid-area: menu;
+}
+aside {
+  grid-area: side;
+}
+main {
+  grid-area: cont;
+}
+footer {
+  grid-area: foot;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2f2f2f;
+  color: #eee;
+}
+.nav .links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+/* .nav .text {
+   display: flex;
+  align-content: center; 
+} */
+.nav .inline-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.nav .inline-list ul {
+  list-style: none;
+  display: none;
+  cursor: pointer;
+}
+
+.nav .inline-list li:hover ul {
+  display: block;
+}
+.menu {
+  background-color: #2f2f2f;
+  color: #eee;
+}
+.menu li {
+  display: inline-block;
+}
+main {
+  background-color: #eee;
+}
+aside {
+  background-color: #6a2929;
+}
+footer {
+  background-color: #2f2f2f;
+}
