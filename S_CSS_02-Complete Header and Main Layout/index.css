@@ -5,6 +5,7 @@
   font-family: sans-serif;
   text-transform: capitalize;
 }
+
 .page {
   display: grid;
   height: 100vh;
@@ -15,7 +16,7 @@
     "nav nav nav nav nav nav nav nav nav nav "
     " head head head head head head head head head head"
     "menu menu menu menu menu menu menu menu menu menu"
-    "side side cont cont cont cont cont cont cont cont"
+    "side cont cont cont cont cont cont cont cont cont"
     "foot foot foot foot foot foot foot foot foot foot";
 }
 nav {
@@ -42,50 +43,105 @@ main {
 footer {
   grid-area: foot;
 }
-.nav {
+nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
   background-color: #2f2f2f;
   color: #eee;
+  margin: 0 10px;
+  padding: 0 20px;
 }
-.nav .links {
+nav .links {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  /* align-content: center; */
+  gap: 10px;
+}
+nav .links > li {
+  padding: 10px;
+  border: solid #222121 1px;
+  border-top: none;
+  border-right: none;
+}
+nav .links li:hover {
+  background-color: #222121;
+}
+
+nav .text {
+  display: flex;
+  /* align-content: flex-start; */
+}
+nav .inline-list {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  /* align-items: center; */
   cursor: pointer;
+  gap: 10px;
 }
-/* .nav .text {
-   display: flex;
-  align-content: center; 
-} */
-.nav .inline-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
+nav .inline-list > li {
+  position: relative;
+  padding: 10px;
+  border: solid #222121 1px;
+  border-top: none;
+  border-right: none;
 }
-.nav .inline-list ul {
+nav .inline-list li:hover {
+  background-color: #222121;
+}
+
+nav .inline-list ul {
+  position: absolute;
   list-style: none;
   display: none;
   cursor: pointer;
+  background-color: #6a2929;
+  width: 100%;
+  top: 100%;
+  left: 0;
 }
 
-.nav .inline-list li:hover ul {
+nav .inline-list li:hover ul {
   display: block;
 }
+header {
+  margin: 0 10px;
+  padding: 0 20px;
+}
+/* header .logo {
+  background-color: #6a2929;
+} */
 .menu {
   background-color: #2f2f2f;
   color: #eee;
+  margin: 0 10px;
+  padding: 0 20px;
 }
-.menu li {
-  display: inline-block;
+.menu .menu-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  font-weight: bold;
 }
+/* .menu .menu-links > li {
+  align-content: center;
+} */
+
 main {
   background-color: #eee;
+  margin: 0 10px;
+  padding: 0 20px;
 }
 aside {
   background-color: #6a2929;
+  margin: 0 10px;
+  padding: 0 20px;
 }
 footer {
   background-color: #2f2f2f;
+  margin: 0 10px;
+  padding: 0 20px;
 }
