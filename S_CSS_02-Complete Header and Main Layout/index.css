@@ -109,26 +109,36 @@ nav .inline-list li:hover ul {
 header {
   margin: 0 10px;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-/* header .logo {
+header .logo {
+  border-radius: 1px solid #2f2f2f;
   background-color: #6a2929;
-} */
+  padding: 10px;
+}
 .menu {
   background-color: #2f2f2f;
   color: #eee;
   margin: 0 10px;
   padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .menu .menu-links {
-  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-self: center;
+  list-style: none;
   font-weight: bold;
+  cursor: pointer;
+  gap: 70px;
 }
-/* .menu .menu-links > li {
-  align-content: center;
-} */
+.menu .menu-links > li {
+  margin: auto;
+  width: 50%;
+  cursor: pointer;
+}
 
 main {
   background-color: #eee;
