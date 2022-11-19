@@ -122,6 +122,13 @@ header .logo {
   padding: 10px;
 }
 @media screen and (max-width: 600px) {
+  nav .links,
+  nav .inline-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
   section.menu li:not(:last-child) {
     display: none;
   }
@@ -132,13 +139,34 @@ header .logo {
     display: flex;
   }
 } */
-
+.search form input {
+  background-color: white;
+  border: solid #6a2929 1px;
+  border-left: none;
+  border-radius: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+.search form button {
+  color: #2f2f2f;
+  background-color: white;
+  border: solid #6a2929 1px;
+  border-right: none;
+  border-radius: 4px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  float: left;
+  text-align: center;
+}
 .menu {
   background-color: #2f2f2f;
   color: #eee;
   display: flex;
   justify-content: center;
-  align-content: center;
 }
 .menu .menu-links {
   display: flex;
@@ -189,10 +217,19 @@ header .logo {
   font-weight: bold;
   cursor: pointer;
 }
-@media screen and (max-width: 600px) {
-  .menu.menu-icon {
-    display: flex;
+/* @media screen and (min-width: 600px) {
+  .menu .menu-icon {
+    display: none;
   }
+} */
+.menu-icon .side-menu > li {
+  top: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+.side-menu {
+  display: none;
+  list-style: none;
 }
 main {
   background-color: #eee;
