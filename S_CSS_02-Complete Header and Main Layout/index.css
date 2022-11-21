@@ -8,39 +8,6 @@
 body {
   font: 1em sans-serif;
 }
-
-/* .page {
-  display: grid;
-  height: 100vh;
-  background-color: #eee;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: 50px 70px 50px auto 60px;
-  grid-template-areas:
-    "nav nav nav nav nav nav nav nav nav nav"
-    "head head head head head head head head head head"
-    "list list list list list list list list list list"
-    "cont cont cont cont cont cont cont cont cont cont"
-    "foot foot foot foot foot foot foot foot foot foot";
-}
-nav {
-  grid-area: nav;
-}
-
-header {
-  grid-area: head;
-}
-section {
-  grid-area: list;
-}
-aside {
-  grid-area: side;
-}
-main {
-  grid-area: cont;
-}
-footer {
-  grid-area: foot;
-} */
 /* grouping */
 nav,
 .menu,
@@ -50,7 +17,6 @@ footer {
   margin: 0 10px;
   padding: 0 20px;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -145,18 +111,11 @@ header .logo a:focus {
     display: none;
   }
 }
-
 @media screen and (max-width: 767px) {
-  section.menu li:not(:last-child) {
+  section.menu .menu-links li:not(:last-child) {
     display: none;
   }
 }
-
-/* @media screen and (max-width: 600px) {
-  aside {
-    display: flex;
-  }
-} */
 .search form input {
   background-color: white;
   border: solid #6a2929 1px;
@@ -183,7 +142,6 @@ header .logo a:focus {
   text-align: center;
 }
 .menu {
-  /* position: relative; */
   background-color: #2f2f2f;
   color: #eee;
   display: flex;
@@ -227,8 +185,7 @@ header .logo a:focus {
 } */
 .menu .menu-links .list-men,
 .list-women,
-.list-brands
-/*, .side-menu */ {
+.list-brands {
   display: none;
   position: absolute;
   list-style: none;
@@ -266,10 +223,16 @@ header .logo a:focus {
   display: none;
   list-style: none;
 }
-.menu .menu-links .menu-icon .side-menu li:hover ul {
+.menu .menu-links .menu-icon .side-menu > li:hover ul {
   display: inline-block;
   z-index: 100;
 }
+/* @media screen and (min-width: 767px) {
+  .menu.menu-icon .side-menu li:hover ul {
+    display: inline-block;
+    z-index: 100;
+  }
+} */
 .menu .icons {
   display: flex;
   justify-content: flex-end;
@@ -286,7 +249,7 @@ header .logo a:focus {
 main {
   background-color: #eee;
 }
-main .test {
+main .cont {
   /* position: relative; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -305,38 +268,35 @@ main .test {
 .img4 {
   grid-area: four;
 }
-main .test img {
+main .cont img {
   width: 100%;
   margin-top: 10px;
 }
-main .test .img {
+main .cont > .img {
   position: relative;
 }
-/* .img-text {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-} */
-main .test .img-text .head {
+main .cont .img-text .head {
   color: #eee;
   top: 10%;
-  left: 70%;
+  left: 60%;
   font-size: 1rem;
 }
-main .test .head::first-letter {
+main .cont .head::first-letter {
   color: #6a2929;
 }
 ::selection {
   color: #6a2929;
   background-color: #2f2f2f;
 }
-main .test .img-text .head {
+
+main .cont .img-text .head {
   position: absolute;
-  width: auto;
+  max-width: 25%;
+  size: 1rem;
 }
-/* main .test .img-text .btn {
-  left: 76%;
-  top: 50%;
+/* main .cont .img-text .btn {
+  left: 50%;
+  top: 20%;
   padding: 10px;
   border-radius: 20px;
   background-color: #2f2f2f;
@@ -344,7 +304,7 @@ main .test .img-text .head {
   font-weight: bold;
   cursor: pointer;
 }
-main .test .img-text .btn:hover {
+main .cont .img-text .btn:hover {
   background-color: #6a2929;
 } */
 .img3,
@@ -384,9 +344,6 @@ main .inline-text a:hover {
   color: #6a2929;
   text-decoration: underline;
 }
-/* main .features {
-  width: inherit;
-} */
 section .title {
   padding-top: 10px;
 }
@@ -410,12 +367,6 @@ section .discover .edit img {
   transform: scale(1.1);
   opacity: 0.5;
 }
-/* @media screen and (max-width: 600px) {
-  .menu.test.main-button {
-    display: none;
-  }
-} */
-
 .edit .mini-btn {
   position: absolute;
   top: 70%;
@@ -427,14 +378,6 @@ section .discover .edit img {
   padding: inherit;
   cursor: pointer;
 }
-/* .edit .mini-btn:hover {
-  display: inline-block;
-} */
-/* @media screen and (max-width: 600px) {
-  .main.test.img.btn {
-    display: none;
-  }
-} */
 footer {
   background-color: #2f2f2f;
   padding: 10px 0;
