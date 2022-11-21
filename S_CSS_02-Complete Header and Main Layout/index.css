@@ -341,13 +341,28 @@ main .test .btn {
   color: #eee;
   font-weight: bold;
   cursor: pointer;
-  font-size: auto;
+  /* font-size: ; */
   size: 0.2rem;
   /* vertical-align: middle;
   overflow: hidden; */
 }
 main .btn:hover {
   background-color: #6a2929;
+}
+.img3,
+.img2,
+.img4 {
+  background-color: #2f2f2f;
+}
+main .inline-text span a {
+  text-decoration: none;
+  color: #eee;
+}
+main .features {
+  width: inherit;
+}
+section .discover {
+  display: flex;
 }
 /* @media screen and (max-width: 600px) {
   .menu.test.main-button {
@@ -358,8 +373,7 @@ main .btn:hover {
   background-color: #6a2929;
   display: none;
 } */
-
-footer {
+.features footer {
   background-color: #2f2f2f;
 }
 footer a,
