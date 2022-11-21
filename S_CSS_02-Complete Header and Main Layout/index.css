@@ -1,5 +1,4 @@
 * {
-  /* box-sizing: border-box; */
   padding: 0;
   margin: 0;
   font-family: sans-serif;
@@ -112,7 +111,7 @@ header .logo a:focus {
   }
 }
 @media screen and (max-width: 767px) {
-  section.menu .menu-links li:not(:last-child) {
+  section.menu .menu-links > li:not(:last-child) {
     display: none;
   }
 }
@@ -185,7 +184,8 @@ header .logo a:focus {
 } */
 .menu .menu-links .list-men,
 .list-women,
-.list-brands {
+.list-brands,
+.side-menu {
   display: none;
   position: absolute;
   list-style: none;
@@ -209,30 +209,15 @@ header .logo a:focus {
   cursor: pointer;
   padding: 5px 10px;
 }
-/* .menu-icon {
-  color: #6a2929;
-  font-weight: bold;
-} */
+
 @media screen and (min-width: 767px) {
   .menu .menu-icon {
     display: none;
   }
 }
-
-.menu-icon .side-menu {
-  display: none;
-  list-style: none;
-}
 .menu .menu-links .menu-icon .side-menu > li:hover ul {
   display: inline-block;
-  z-index: 100;
 }
-/* @media screen and (min-width: 767px) {
-  .menu.menu-icon .side-menu li:hover ul {
-    display: inline-block;
-    z-index: 100;
-  }
-} */
 .menu .icons {
   display: flex;
   justify-content: flex-end;
