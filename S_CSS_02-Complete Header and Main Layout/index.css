@@ -139,14 +139,14 @@ header .logo > a {
 header .logo a:focus {
   background-color: #2f2f2f;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   nav .links,
   nav .inline-list {
     display: none;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   section.menu li:not(:last-child) {
     display: none;
   }
@@ -256,7 +256,7 @@ header .logo a:focus {
   color: #6a2929;
   font-weight: bold;
 } */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 767px) {
   .menu .menu-icon {
     display: none;
   }
@@ -330,12 +330,11 @@ main .test .head::first-letter {
   color: #6a2929;
   background-color: #2f2f2f;
 }
-main .test .img-text .btn,
-.head {
+main .test .img-text .head {
   position: absolute;
   width: auto;
 }
-main .test .img-text .btn {
+/* main .test .img-text .btn {
   left: 76%;
   top: 50%;
   padding: 10px;
@@ -347,7 +346,7 @@ main .test .img-text .btn {
 }
 main .test .img-text .btn:hover {
   background-color: #6a2929;
-}
+} */
 .img3,
 .img2,
 .img4 {
