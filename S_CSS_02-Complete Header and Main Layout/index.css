@@ -55,19 +55,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* align-content: center; */
   flex-wrap: nowrap;
   background-color: #2f2f2f;
   color: #eee;
+  margin-bottom: 10px;
   /* position: fixed;
-  z-index: 1;
-  width: 100%; */
+  z-index: 1; */
 }
 nav .links {
   list-style: none;
   cursor: pointer;
   display: flex;
-  /* align-content: center; */
   gap: 10px;
 }
 nav .links li {
@@ -87,14 +85,13 @@ nav .links li:hover {
   color: #6a2929;
 } */
 
-nav .text {
+/* nav .text {
   display: flex;
-  /* align-content: flex-start; */
-}
+  align-items: flex-start;
+} */
 nav .inline-list {
   list-style: none;
   display: flex;
-  /* align-items: center; */
   cursor: pointer;
   gap: 10px;
 }
@@ -127,7 +124,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 header .logo {
   border: solid #2f2f2f 1px;
@@ -193,6 +191,7 @@ header .logo a:focus {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .menu .menu-links {
   display: flex;
@@ -268,14 +267,14 @@ header .logo a:focus {
   display: none;
   list-style: none;
 }
-.menu .menu-links .side-menu li:hover ul {
+.menu .menu-links .menu-icon .side-menu li:hover ul {
   display: inline-block;
+  z-index: 100;
 }
 .menu .icons {
   display: flex;
   justify-content: flex-end;
-  /*align-content: space-around; */
-  /* align-items: center; */
+  align-content: space-around;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -314,7 +313,12 @@ main .test img {
 main .test .img {
   position: relative;
 }
-main .test .head {
+/* .img-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+main .test .img-text .head {
   color: #eee;
   top: 10%;
   left: 70%;
@@ -327,26 +331,27 @@ main .test .head::first-letter {
   color: #6a2929;
   background-color: #2f2f2f;
 }
-main .test .btn,
+main .test .img-text .btn,
 .head {
   position: absolute;
+  width: auto;
 }
-main .test .btn {
+main .test .img-text .btn {
   /* position: absolute; */
   left: 76%;
-  top: 70%;
+  top: 50%;
   padding: 20px;
   border-radius: 20px;
   background-color: #2f2f2f;
   color: #eee;
   font-weight: bold;
   cursor: pointer;
+  /* width: 30px; */
   /* font-size: ; */
-  size: 0.2rem;
   /* vertical-align: middle;
   overflow: hidden; */
 }
-main .btn:hover {
+main .img-text .btn:hover {
   background-color: #6a2929;
 }
 .img3,
@@ -354,30 +359,80 @@ main .btn:hover {
 .img4 {
   background-color: #2f2f2f;
 }
+/* .img3,
+.img2,
+.img4:hover {
+  box-shadow: rgb(0, 0, 0, 0.5);
+} */
+main .inline-text {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1rem;
+}
 main .inline-text span a {
   text-decoration: none;
   color: #eee;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 10px 0;
 }
-main .features {
+main .inline-text a {
+  padding: 10px;
+}
+main .inline-text a:hover {
+  color: #6a2929;
+  text-decoration: underline;
+}
+/* main .features {
   width: inherit;
-}
+} */
 section .discover {
   display: flex;
+  justify-content: space-between;
+  background-color: #2f2f2f;
+  padding: 10px 0;
+  width: 100%;
+  margin: 10px 0;
+}
+section .discover .edit {
+  transition: transform 0.5s;
+  /* font: inherit; */
+  position: relative;
+}
+section .discover .edit img {
+  width: 100%;
+}
+.edit:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
 }
 /* @media screen and (max-width: 600px) {
   .menu.test.main-button {
     display: none;
   }
 } */
-/* aside {
-  background-color: #6a2929;
-  display: none;
-} */
-.features footer {
+
+.edit .mini-btn {
+  position: absolute;
+  top: 70%;
   background-color: #2f2f2f;
+  color: #eee;
+  left: 40%;
+  border: 4px solid #2f2f2f;
+  border-radius: 10px;
+  padding: inherit;
+  cursor: pointer;
+}
+/* .edit .mini-btn:hover {
+  display: inline-block;
+} */
+footer {
+  background-color: #2f2f2f;
+  padding: 10px 0;
 }
 footer a,
 p {
   color: white;
   font-weight: bolder;
+  padding: 5px 0;
 }
