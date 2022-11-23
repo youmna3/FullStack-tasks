@@ -159,6 +159,10 @@ header .logo a:focus {
   cursor: pointer;
   padding: 10px 30px;
 }
+.menu .menu-links > li > ul > li > a {
+  text-decoration: none;
+  color: inherit;
+}
 .menu .menu-links > li::before {
   content: "";
   width: 0;
@@ -174,9 +178,6 @@ header .logo a:focus {
 .menu .menu-links li:hover {
   background-color: #6a2929;
 }
-/* .menu .menu-links li::content {
-    visibility: hidden;
-  } */
 .menu .menu-links .list-men,
 .list-women,
 .list-brands,
@@ -194,9 +195,6 @@ header .logo a:focus {
 .menu .menu-links li:hover ul {
   display: inline-block;
 }
-/* .menu .menu-links li:focus-visible ul {
-    display: inline-block;
-  } */
 .menu .menu-links .list-men > li,
 .list-women > li,
 .list-brands > li,
