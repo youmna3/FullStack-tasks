@@ -90,7 +90,33 @@
             <span class="icons"><i class="fa-regular fa-heart"></i></span>
         </div>
     </section>
-    <main></main>
+    <main>
+        <div class="table-style">
+            <table>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            <input type="text" id="product-name" placeholder="Product Name" />
+                        </th>
+                        <th><input type="text" id="price" placeholder="Price" /></th>
+                        <th>
+                            <input type="text" id="quantity" placeholder="Quantity" />
+                        </th>
+                        <th colspan="2"><button>Add</button></th>
+                    </tr>
+                    <tr>
+                        <th>Products</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle" id="products">
+                </tbody>
+            </table>
+        </div>
+    </main>
     <footer></footer>
     <script src="app.js"></script>
 </body>
