@@ -143,6 +143,7 @@ header .logo a:focus {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow-x: auto;
 }
 .menu .menu-links {
   display: flex;
@@ -232,7 +233,6 @@ th,
 td,
 thead {
   border: 1px solid #222121;
-  /* background-color: #2f2f2f; */
   color: #eee;
   padding: 10px;
 }
@@ -242,12 +242,6 @@ table {
   border-spacing: 2px;
   overflow-x: auto;
   text-align: center;
-  /* border-collapse: collapse; */
-}
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
 }
 tr:nth-child(even) {
   background-color: #6a2929;
