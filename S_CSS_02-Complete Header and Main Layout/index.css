@@ -148,7 +148,7 @@ header .logo a:focus {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 .menu .menu-links {
   display: flex;
