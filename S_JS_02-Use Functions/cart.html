@@ -95,21 +95,21 @@
             <table>
                 <thead>
                     <tr>
-                        <th>
+                        <th class="row">
                             <input type="text" id="product-name" placeholder="Product Name" />
                         </th>
-                        <th><input type="text" id="price" placeholder="Price" /></th>
+                        <th class="row"><input type="text" id="price" placeholder="Price" /></th>
                         <th>
                             <input type="text" id="quantity" placeholder="Quantity" />
                         </th>
-                        <th colspan="2"><button id="add">Add</button></th>
+                        <th colspan="2" class="row"><button id="add" type="button">Add</button></th>
                     </tr>
                     <tr>
                         <th>Products</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
-                        <th>Remove</th>
+                        <th><button id="remove" type="button">Remove</button></th>
                     </tr>
                 </thead>
                 <tbody id="products">
@@ -144,7 +144,7 @@
                             <h5 id="total"></h5>
 
                         </div>
-                        <button>
+                        <button class="check-btn">
                             Proceed To Checkout
                         </button>
                     </div>
