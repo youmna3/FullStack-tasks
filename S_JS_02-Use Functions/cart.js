@@ -76,23 +76,3 @@ const removeBtn = document
 */
 
 //set local storage
-/*
-const clcuShipping = () => {
-  const shippingCost = 15;
-  let shipping = (document.getElementById(
-    "shipping"
-  ).textContent = `$${shippingCost}`);
-  shipping = document.getElementById("shipping").innerHTML.replace("$", "");
-  const checkoutSubTotal = document
-    .getElementById("sub-tota")
-    .innerHTML.replace("$", "S");
-};
-*/
-/*
-const calcuShipping = () => {
-  const productsArray = document.getElementsByClassName("product-total");
-  document.getElementById("sub-total").innerHTML = `$${
-    productsArray.length * 10
-  }`;
-};
-*/
