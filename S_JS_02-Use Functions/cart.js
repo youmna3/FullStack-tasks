@@ -1,9 +1,6 @@
 "use strict";
 
-// const shippingCost = 15;
-// const shipping = (document.getElementById(
-//   "shipping"
-// ).textContent = `$${shippingCost}`);
+//document.getElementById("total").innerHtML = `$${total + shippingCost}`;
 //document.getElementById("total").textContent = `$${subTotal + shippingCost}`;
 document.getElementById("add").addEventListener("click", () => {
   const product = document.getElementById("product-name").value;
@@ -17,16 +14,16 @@ document.getElementById("add").addEventListener("click", () => {
     quantity,
     subTotal
   );
-  calcTotal();
-  // document.getElementById("sub-total").textContent = `$${subTotal}`;
-  //const shipping = (document.getElementById("shipping").textContent = 15);
+  calcSubTotal();
+  calcShipping();
+  calculateTotal();
 
   if (!product || !price || !quantity) {
     alert("please enter a valid input");
   }
 });
 
-const calcTotal = () => {
+const calcSubTotal = () => {
   const productsArray = document.getElementsByClassName("product-total");
   let total = 0;
   // for (let i = 0; i < productsArray.length; i++) {
@@ -35,7 +32,22 @@ const calcTotal = () => {
   for (const e of productsArray) {
     total += Number(parseFloat(e.innerHTML.replace("$", "")));
   }
+
   document.getElementById("sub-total").innerHTML = `${total}`;
+};
+
+const calcShipping = () => {
+  const shippingCost = 15;
+  document.getElementById("shipping").innerHTML = `$${shippingCost}`;
+};
+const calculateTotal = () => {
+  const s = document.getElementById("sub-total").innerHTML.replace("$", "");
+  const shipCost = document
+    .getElementById("shipping")
+    .innerHTML.replace("$", "");
+  document.getElementById("total").innerHTML = `$${
+    Number(shipCost) + Number(s)
+  }`;
 };
 
 const productRow = (product, price, quantity, subTotal) => {
@@ -47,9 +59,6 @@ const productRow = (product, price, quantity, subTotal) => {
   <td><button type="button">Remove</button></td></tr>`;
 };
 
-// const style = (s) => {
-//   document.querySelector(".check-btn").style = s;
-// };
 document.querySelector(".check-btn").style.backgroundColor = "#6a2929";
 document.querySelector(".check-btn").style.padding = "5px";
 document.querySelector(".check-btn").style.margin = "5px";
@@ -67,3 +76,23 @@ const removeBtn = document
 */
 
 //set local storage
+/*
+const clcuShipping = () => {
+  const shippingCost = 15;
+  let shipping = (document.getElementById(
+    "shipping"
+  ).textContent = `$${shippingCost}`);
+  shipping = document.getElementById("shipping").innerHTML.replace("$", "");
+  const checkoutSubTotal = document
+    .getElementById("sub-tota")
+    .innerHTML.replace("$", "S");
+};
+*/
+/*
+const calcuShipping = () => {
+  const productsArray = document.getElementsByClassName("product-total");
+  document.getElementById("sub-total").innerHTML = `$${
+    productsArray.length * 10
+  }`;
+};
+*/
