@@ -34,11 +34,12 @@ const renderHTML = () => {
   products.forEach((p) => {
     document.querySelector(".products").innerHTML += productRow(p);
   });
-  document.getElementById("total").innerHTML = `$${calcSubTotal()}`;
-  calcSubTotal();
+  document.getElementById("sub-total").innerHTML = `$${calcSubTotal()}`;
+
   document.getElementById("shipping").innerHTML = `$${calcShipping()}`;
-  calculateTotal();
+  document.getElementById("total").innerHTML = `$${calculateTotal()}`;
 };
+/*
 const calcSubTotal = () => {
   const productsArray = document.getElementsByClassName("product-total");
   let total = 0;
@@ -48,11 +49,16 @@ const calcSubTotal = () => {
 
   document.getElementById("sub-total").innerHTML = `${total}`;
 };
-
+*/
+const calcSubTotal = () => {
+  return products.map((p) => p.subTotal).reduce((a, e) => (a += e));
+};
 const calcShipping = () => {
   return 15;
   // document.getElementById("shipping").innerHTML = `$${shippingCost}`;
 };
+const calculateTotal = () => calcShipping() + calcSubTotal();
+/*
 const calculateTotal = () => {
   const s = document.getElementById("sub-total").innerHTML.replace("$", "");
   const shipCost = document
@@ -62,7 +68,7 @@ const calculateTotal = () => {
     Number(s) + Number(shipCost)
   }`;
 };
-
+*/
 const productRow = (p) => {
   return `<tr>
   <td>${p.productName}</td>
