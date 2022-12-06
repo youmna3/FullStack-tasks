@@ -13,18 +13,6 @@ document.getElementById("add").addEventListener("click", () => {
   });
   renderHTML();
 
-  /*
-  document.querySelector(".products").innerHTML += productRow(
-    productName,
-    price,
-    quantity,
-    subTotal
-  );
-  //document.getElementById("total").innerHTML = `$${calcSubTotal()}`;
-  calcSubTotal();
-  document.getElementById("shipping").innerHTML = `$${calcShipping()}`;
-  calculateTotal();
-*/
   if (!productName || !price || !quantity) {
     alert("please enter a valid input");
   }
@@ -35,46 +23,30 @@ const renderHTML = () => {
     document.querySelector(".products").innerHTML += productRow(p);
   });
   document.getElementById("sub-total").innerHTML = `$${calcSubTotal()}`;
-
-  document.getElementById("shipping").innerHTML = `$${calcShipping()}`;
-  document.getElementById("total").innerHTML = `$${calculateTotal()}`;
+  document.getElementById("shipping").innerHTML = `$${
+    calcSubTotal() > 100 ? "freeshipping" : 15
+  }`;
+  document.getElementById("total").innerHTML = `$${getTotal()}`;
 };
-/*
-const calcSubTotal = () => {
-  const productsArray = document.getElementsByClassName("product-total");
-  let total = 0;
-  for (const e of productsArray) {
-    total += Number(parseFloat(e.innerHTML.replace("$", "")));
-  }
-
-  document.getElementById("sub-total").innerHTML = `${total}`;
-};
-*/
 const calcSubTotal = () => {
   return products.map((p) => p.subTotal).reduce((a, e) => (a += e));
 };
-const calcShipping = () => {
-  return 15;
-  // document.getElementById("shipping").innerHTML = `$${shippingCost}`;
+
+const calcTotal = () => 15 + calcSubTotal();
+
+const getTotal = () => {
+  if (calcSubTotal() > 100) {
+    return calcSubTotal();
+  } else {
+    return calcTotal();
+  }
 };
-const calculateTotal = () => calcShipping() + calcSubTotal();
-/*
-const calculateTotal = () => {
-  const s = document.getElementById("sub-total").innerHTML.replace("$", "");
-  const shipCost = document
-    .getElementById("shipping")
-    .innerHTML.replace("$", "");
-  document.getElementById("total").innerHTML = `$${
-    Number(s) + Number(shipCost)
-  }`;
-};
-*/
 const productRow = (p) => {
   return `<tr>
   <td>${p.productName}</td>
   <td>${p.price}</td>
   <td><button type="button">-</button><input type="number" value="${p.quantity}" /><button type="button">+</button></td>
-  <td class="product-total">${p.subTotal}</td>
+  <td class=>${p.subTotal}</td>
   <td><button type="button">Remove</button></td></tr>`;
 };
 
