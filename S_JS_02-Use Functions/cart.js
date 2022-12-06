@@ -17,22 +17,15 @@ document.getElementById("add").addEventListener("click", () => {
     alert("please enter a valid input");
   }
 });
-const renderHTML = () => {
-  document.querySelector(".products").innerHTML = "";
-  products.forEach((p) => {
-    document.querySelector(".products").innerHTML += productRow(p);
-  });
-  document.getElementById("sub-total").innerHTML = `$${calcSubTotal()}`;
-  document.getElementById("shipping").innerHTML = `$${
-    calcSubTotal() > 100 ? "freeshipping" : 15
-  }`;
-  document.getElementById("total").innerHTML = `$${getTotal()}`;
-};
+
 const calcSubTotal = () => {
-  return products.map((p) => p.subTotal).reduce((a, e) => (a += e));
+  return products.map((p) => p.subTotal).reduce((a, e) => (a += e), 0);
+};
+const getShipping = () => {
+  return calcSubTotal() > 100 ? "freeshipping" : 15;
 };
 
-const calcTotal = () => 15 + calcSubTotal();
+const calcTotal = () => calcSubTotal() + getShipping();
 
 const getTotal = () => {
   if (calcSubTotal() > 100) {
@@ -41,29 +34,40 @@ const getTotal = () => {
     return calcTotal();
   }
 };
-const productRow = (p) => {
+const decQun = (i) => {
+  if (products[i].quantity > 1) products[i].quantity--;
+  renderHTML();
+};
+const incQun = (i) => {
+  products[i].quantity++;
+  renderHTML();
+};
+const remove = (i) => {
+  products.splice(i, 1);
+  renderHTML();
+};
+const renderHTML = () => {
+  document.querySelector(".products").innerHTML = "";
+  products.forEach((p, i) => {
+    document.querySelector(".products").innerHTML += productRow(p, i);
+  });
+  document.getElementById("sub-total").innerHTML = `$${calcSubTotal()}`;
+  document.getElementById("shipping").innerHTML = `$${getShipping()}`;
+  document.getElementById("total").innerHTML = `$${getTotal()}`;
+};
+const productRow = (p, i) => {
   return `<tr>
   <td>${p.productName}</td>
   <td>${p.price}</td>
-  <td><button type="button">-</button><input type="number" value="${p.quantity}" /><button type="button">+</button></td>
+  <td><button type="button" onClick="decQun(${i})">-</button><input type="number" value="${p.quantity}" /><button type="button" onClick="incQun(${i})">+</button></td>
   <td class=>${p.subTotal}</td>
-  <td><button type="button">Remove</button></td></tr>`;
+  <td><button type="button" onClick="remove(${i})">Remove</button></td></tr>`;
 };
 
 document.querySelector(".check-btn").style.backgroundColor = "#6a2929";
 document.querySelector(".check-btn").style.padding = "5px";
 document.querySelector(".check-btn").style.margin = "5px";
 document.querySelector(".check-btn").style.cursor = "pointer";
-/*
-document.querySelector(".hidden").style.display = "none";
-const deleteProd = () => {
-  addProd.classList.add("hidden");
-};
 
-const removeBtn = document
-  .getElementById("remove")
-  .addEventListener("click", deleteProd);
-
-*/
-
-//set local storage
+// const products = JSON.parse(localStorage.getItem("products") || "[]");
+// renderHTML();
