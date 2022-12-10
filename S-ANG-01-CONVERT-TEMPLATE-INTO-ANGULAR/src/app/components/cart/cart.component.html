@@ -1,0 +1,65 @@
+<main>
+    <div class="table-style">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="text" id="product-name" placeholder="Product Name" />
+                    </th>
+                    <th><input type="text" id="price" placeholder="Price" /></th>
+                    <th>
+                        <input type="text" id="quantity" placeholder="Quantity" />
+                    </th>
+                    <th colspan="2"><button id="add" type="button">Add</button></th>
+                </tr>
+                <tr>
+                    <th>Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="check-out">
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Coupon Code" />
+                    <div>
+                        <button class="btn-primary">Apply Coupon</button>
+                    </div>
+                </div>
+            </form>
+            <h5>
+                <span>Cart Summary</span>
+            </h5>
+            <div>
+                <div>
+                    <div>
+                        <h6>Subtotal</h6>
+                        <h6 id="sub-total"></h6>
+                    </div>
+                    <div>
+                        <h6>Shipping</h6>
+                        <h6 id="shipping"></h6>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <div>
+                        <h6>Total</h6>
+                        <h5 id="total"></h5>
+
+                    </div>
+                    <button class="check-btn">
+                        Proceed To Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</main>

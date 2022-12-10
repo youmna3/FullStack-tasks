@@ -1,0 +1,37 @@
+main {
+  margin: 0 10px;
+  padding: 0 20px;
+}
+table,
+th,
+td,
+thead {
+  border: 1px solid #222121;
+  color: rgb(19, 18, 18);
+  padding: 10px;
+}
+table {
+  width: 100%;
+  display: table;
+  border-spacing: 2px;
+  overflow-x: auto;
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #6a2929;
+}
+tr:nth-child(odd) {
+  background-color: #2f2f2f;
+}
+.check-out {
+  margin: 20px;
+  background-color: #2f2f2f;
+  color: #eee;
+  width: 30%;
+  border: solid #222121 2px;
+  border-radius: 3px;
+  padding: 10px;
+}
+.check-out .check-btn {
+  color: #2f2f2f;
+}
