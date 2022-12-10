@@ -7,6 +7,5 @@ const addToCart = (product) => {
   } else {
     products.push({ ...product, quantity: 1 });
   }
-  products.push(product);
   localStorage.setItem("products", JSON.stringify(products));
 };
