@@ -8,8 +8,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## pages Routes
 
--Home page =''
-=cart page = '/cart'
+- Home page =''
+- cart page = '/cart'
 
 ## Code scaffolding
 
