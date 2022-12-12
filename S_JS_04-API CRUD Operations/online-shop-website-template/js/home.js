@@ -1,15 +1,15 @@
 "use strict";
 const addSingleProductToCart = (product) => {
   const products = JSON.parse(localStorage.getItem("products") || "[]");
-  products.push(product);
+  products.push(product.id);
   localStorage.setItem("products", JSON.stringify(products));
 };
 
 const getData = async () => {
   try {
-    let url = `http://localhost:5000/api/products/getRecent`;
-    let res = await fetch(url);
-    let productsData = await res.json();
+    const url = `http://localhost:5000/api/products/getRecent`;
+    const res = await fetch(url);
+    const productsData = await res.json();
     //console.log(productsData.data);
 
     productsData.data.forEach((product) => {
@@ -46,9 +46,9 @@ const productHtml = (product) => {
         product.name
       }</a>
       <div class="d-flex align-items-center justify-content-center mt-2">
-        <h5>$${product.price}</h5><h6 class="text-muted ml-2"><del>$${
-    product.price * (1 - product.discount)
-  }</del></h6>
+        <h5>$${
+          product.price * (1 - product.discount)
+        }</h5><h6 class="text-muted ml-2"><del>$${product.price}</del></h6>
       </div>
       <div class="d-flex align-items-center justify-content-center mb-1">
         <small class="fa fa-star text-primary mr-1"></small>

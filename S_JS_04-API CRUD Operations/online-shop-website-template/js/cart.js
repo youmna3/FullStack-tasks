@@ -1,23 +1,31 @@
+const updateLocalStorage = () => {
+  return localStorage.setItem("products", JSON.stringify(products));
+};
 const getShipping = () => {
   return products.length * 10;
 };
 
 const getSubTotal = () => {
-  return products.map((p) => p.price * p.quantity).reduce((a, e) => (a += e));
+  return products
+    .map((p) => p.price * p.quantity)
+    .reduce((a, e) => (a += e), 0);
 };
 
 const getTotal = () => getShipping() + getSubTotal();
 
 const decQuantity = (i) => {
   if (products[i].quantity > 1) products[i].quantity--;
+  updateLocalStorage();
   renderHTML();
 };
 const incQuantity = (i) => {
   products[i].quantity++;
+  updateLocalStorage();
   renderHTML();
 };
 const remove = (i) => {
   products.splice(i, 1);
+  updateLocalStorage;
   renderHTML();
 };
 
@@ -61,4 +69,22 @@ const getProductHTMLRow = (p, i) => {
 };
 
 const products = JSON.parse(localStorage.getItem("products") || "[]");
+const postData = async () => {
+  const url = `http://localhost:5000/api`;
+  fetch(`${url}/users/login`, {
+    method: "POST",
+    headers: {
+      "x-access-token": "Bearer <token>",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: "ramymibrahim@yahoo.com",
+      password: "123456",
+    }),
+  })
+    .then((res) => res.json())
+    .then((res) => console.log(res));
+};
+
 renderHTML();
+postData();
