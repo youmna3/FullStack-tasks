@@ -69,9 +69,11 @@ const getProductHTMLRow = (p, i) => {
 };
 
 const products = JSON.parse(localStorage.getItem("products") || "[]");
+
 const postData = async () => {
-  const url = `http://localhost:5000/api`;
-  fetch(`${url}/users/login`, {
+  // const url = `http://localhost:5000/api`;
+
+  fetch("http://localhost:5000/api/users/login", {
     method: "POST",
     headers: {
       "x-access-token": "Bearer <token>",
@@ -83,7 +85,11 @@ const postData = async () => {
     }),
   })
     .then((res) => res.json())
-    .then((res) => console.log(res));
+    //.then((res) => console.log(res))
+    .then((data) => {
+      localStorage.setItem("token", data.token);
+      console.log(data.token);
+    });
 };
 
 renderHTML();
