@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-home-main',
@@ -7,8 +8,12 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./home-main.component.css'],
 })
 export class HomeMainComponent {
+  @Input() addtoFav() {
+    this.storageService.getLikesNumber();
+  }
   faHeart = faHeart;
-  isDisabled: boolean = false;
+  constructor(private storageService: StorageService) {}
+  // isDisabled: boolean = false;
   handelClick() {
     alert('added to favorites');
   }
