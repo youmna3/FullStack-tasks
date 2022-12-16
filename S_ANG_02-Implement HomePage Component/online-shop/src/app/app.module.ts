@@ -22,6 +22,7 @@ import { ContactComponent } from './components/layouts/contact/contact.component
 import { ProductsFilterComponent } from './components/products-filter/products-filter.component';
 import { ProductsShopComponent } from './components/products-shop/products-shop.component';
 import { ProductsPaginationComponent } from './components/products-pagination/products-pagination.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,13 @@ import { ProductsPaginationComponent } from './components/products-pagination/pr
     ProductsShopComponent,
     ProductsPaginationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

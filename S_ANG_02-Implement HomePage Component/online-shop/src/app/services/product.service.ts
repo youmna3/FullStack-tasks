@@ -8,6 +8,7 @@ import { Product } from '../interfaces/product';
 })
 export class ProductService {
   cartProducts: Product[] = [];
+  heart: number = 0;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -27,11 +28,21 @@ export class ProductService {
     this.cartProducts.push(product);
   }
 
-  getProductById(id:string){
-    return this.httpClient.get(`${environment.apiUrl}products/${id}`)
+  getProductById(id: string) {
+    return this.httpClient.get(`${environment.apiUrl}products/${id}`);
   }
 
-  getProductByCategoryId(id:string){
-    return this.httpClient.get(`${environment.apiUrl}products/getByCategoryId/${id}`);
+  getProductByCategoryId(id: string) {
+    return this.httpClient.get(
+      `${environment.apiUrl}products/getByCategoryId/${id}`
+    );
+  }
+  getHeartNumber() {
+    this.heart += 1;
+    localStorage.setItem('heart', JSON.stringify(this.heart));
+    localStorage.getItem('heart');
+  }
+  addHeartNumber() {
+    return localStorage.getItem('heart') || 0;
   }
 }
