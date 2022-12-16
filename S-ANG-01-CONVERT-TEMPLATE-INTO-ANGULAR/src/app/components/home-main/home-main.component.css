@@ -137,3 +137,11 @@ section .discover .edit img {
   padding: inherit;
   cursor: pointer;
 }
+.icons {
+  color: #6a2929;
+  position: absolute;
+  left: 80%;
+  top: 70%;
+  font-size: 20px;
+  border: none;
+}
