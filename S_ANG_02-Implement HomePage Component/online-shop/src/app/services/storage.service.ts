@@ -63,8 +63,7 @@ export class StorageService {
     );
   }
 
-  getLikesQuan(): number {
-    const q = this.getLikesNumber();
-    return q?.length || 0;
+  getLikesQuan() {
+    return localStorage.getItem('heart') || 0;
   }
 }
