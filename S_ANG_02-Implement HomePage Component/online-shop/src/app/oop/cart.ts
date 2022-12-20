@@ -12,14 +12,14 @@ export class Cart {
   ) {
     this.cartLines = storageService.getCartLines();
   }
-
+  //this.price - this.price * this.dicount
   getTotal(): number {
     return this.getShipping() + this.getSubTotal();
   }
 
   getSubTotal(): number {
     return this.cartLines
-      .map((x) => x.price * x.quantity)
+      .map((x) => (x.price - x.price * x.dicount) * x.quantity)
       .reduce((a, v) => (a += v), 0);
   }
   getShipping(): number {

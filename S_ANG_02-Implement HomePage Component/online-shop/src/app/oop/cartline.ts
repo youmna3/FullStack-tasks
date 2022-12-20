@@ -7,14 +7,16 @@ import { StorageService } from '../services/storage.service';
 export class CartLine {
   quantity: number;
   price: number;
+  dicount: number;
   constructor(public product: Product, private storageService: StorageService) {
     this.product = product;
     this.quantity = 1;
     this.price = product.price;
+    this.dicount = product.discount;
   }
-
+  // line.product.price - line.product.price * line.product.discount
   getCartLineTotalPrice() {
-    return this.price * this.quantity;
+    return (this.price - this.price * this.dicount) * this.quantity;
   }
 
   incQuantity = (q: number) => {
