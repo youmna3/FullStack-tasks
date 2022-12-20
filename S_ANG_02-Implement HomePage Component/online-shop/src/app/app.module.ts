@@ -23,6 +23,9 @@ import { ProductsFilterComponent } from './components/products-filter/products-f
 import { ProductsShopComponent } from './components/products-shop/products-shop.component';
 import { ProductsPaginationComponent } from './components/products-pagination/products-pagination.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductsFilterComponent,
     ProductsShopComponent,
     ProductsPaginationComponent,
+    CheckoutComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

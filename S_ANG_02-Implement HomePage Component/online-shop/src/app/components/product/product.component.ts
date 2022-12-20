@@ -1,7 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
-import { Product } from 'src/app/interfaces/product';
+//import { Product } from 'src/app/interfaces/product';
+import { Product } from 'src/app/oop/product';
 import { ProductService } from 'src/app/services/product.service';
-//import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class ProductComponent {
   @Input() product: Product = {} as Product;
-  // pass data from child to parent by @Input
+
   addtoFav() {
     this.storageService.getLikesNumber();
   }

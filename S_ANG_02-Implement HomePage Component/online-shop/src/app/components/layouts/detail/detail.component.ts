@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/interfaces/product';
+//import { Product } from 'src/app/interfaces/product';
+import { Product } from 'src/app/oop/product';
 import { ColorService } from 'src/app/services/color.service';
 import { ProductService } from 'src/app/services/product.service';
 import { SizeService } from 'src/app/services/size.service';

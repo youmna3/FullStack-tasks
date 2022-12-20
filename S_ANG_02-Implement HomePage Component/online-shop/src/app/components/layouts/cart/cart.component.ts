@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { CartLine } from 'src/app/interfaces/cart-line';
+import { Component, Output } from '@angular/core';
+//import { CartLine } from 'src/app/interfaces/cart-line';
+import { CartLine } from 'src/app/oop/cartline';
+import { Cart } from 'src/app/oop/cart';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -8,11 +10,13 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  constructor(private storageService: StorageService) {
-    this.cartLines = storageService.getCartLines();
+  cart: Cart;
+  constructor(public storageService: StorageService) {
+    // this.cartLines = storageService.getCartLines();
+    this.cart = new Cart(storageService);
   }
-  cartLines: CartLine[] = [];
-
+  //cartLines: CartLine[] = [];
+  /*
   getTotal(): number {
     return this.getShipping() + this.getSubTotal();
   }
@@ -30,4 +34,8 @@ export class CartComponent {
   showAlert(msg: string) {
     alert(msg);
   }
+  */
+}
+function output() {
+  throw new Error('Function not implemented.');
 }

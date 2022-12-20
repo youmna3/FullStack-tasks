@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { CartLine } from '../interfaces/cart-line';
-import { Product } from '../interfaces/product';
-
+//import { CartLine } from '../interfaces/cart-line';
+import { CartLine } from 'src/app/oop/cartline';
+//import { Product } from '../interfaces/product';
+import { Product } from 'src/app/oop/product';
+import { Cart } from '../oop/cart';
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +18,7 @@ export class StorageService {
   addProducts(product: Product, quantity: number) {
     //Add product to localstorage as flat products (array of products not cartLines)
     // save products in localStorage
-    const products: Product[] = this.getProductsFromLocalStorage();
+    const products = this.getProductsFromLocalStorage();
     for (let i = 0; i < quantity; i++) {
       products.push(product);
     }
@@ -26,22 +28,16 @@ export class StorageService {
   getCartLines(): CartLine[] {
     const products: Product[] = this.getProductsFromLocalStorage();
     const cartLines: CartLine[] = [];
-    //Convert Array of products into cart lines array and return it
-    for (const p of products) {
-      const i = cartLines.findIndex((x) => x.product._id === p._id);
-      if (i >= 0) {
-        cartLines[i].quantity += 1;
+    products.forEach((p) => {
+      const ix = cartLines.findIndex((x) => x.product._id === p._id);
+      if (ix >= 0) {
+        cartLines[ix].quantity += 1;
       } else {
-        cartLines.push({
-          price: p.price,
-          product: p,
-          quantity: 1,
-        });
+        cartLines.push(new CartLine(p, this));
       }
-    }
+    });
     return cartLines;
   }
-
   save(cartLines: CartLine[]) {
     const products: Product[] = [];
     cartLines.forEach((c) => {
