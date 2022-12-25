@@ -42,7 +42,6 @@ export class CheckoutComponent {
       total_price: this.getTotal(),
       user_id: this.authService.getId(),
       order_date: new Date(),
-      order_details: [JSON.parse(localStorage.getItem('products') || '')],
       shipping_info: this.checkOutForm.value,
     });
     if (this.checkOutForm.valid) {
