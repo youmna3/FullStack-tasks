@@ -36,7 +36,9 @@ export class AuthService {
       this.getLoginData()?.last_name
     }`;
   }
-
+  getId() {
+    return console.log(this.getLoginData()?._id);
+  }
   signOut() {
     localStorage.removeItem('loginData');
     this.router.navigate(['/home']);
@@ -46,7 +48,6 @@ export class AuthService {
     return this.httpClient.post(`${environment.apiUrl}orders/`, data, {
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json',
         'x-access-token': this.getToken(),
       },
     });
